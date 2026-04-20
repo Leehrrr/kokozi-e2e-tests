@@ -34,3 +34,29 @@ Playwright E2E test for kokozi.com cart merge scenario
 | CRT-MG-01 | 비회원 상태에서 상품 A (아기상어 아띠) 장바구니 담기 | 장바구니에 상품 A 담김 |
 | CRT-FL-05 | 헤더 장바구니 메뉴 열기 | 상품 A 노출 확인 |
 | CRT-MG-02 | 회원 계정으로 로그인 후 장바구니 이동 | 상품 A + 상품 B 모두 노출 확인 |
+
+---
+
+## 실행 방법
+
+### 1. 패키지 설치
+
+```bash
+pip install pytest playwright pytest-playwright
+playwright install chromium
+```
+
+### 2. 계정 정보 설정
+
+`config.py` 에서 실제 계정 정보 입력:
+
+```python
+MEMBER_EMAIL    = "your_email@example.com"
+MEMBER_PASSWORD = "your_password"
+```
+
+### 3. 테스트 실행
+
+```bash
+pytest test_cart_merge.py -v
+```
